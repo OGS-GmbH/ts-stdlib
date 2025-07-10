@@ -1,0 +1,15 @@
+ /** 
+	* Rounds a number up only if its fractional part is at or above the given threshold.
+ *
+ * @param value - The value to round.
+ * @param threshold - The fractional cutoff (0–1) above which to round up.
+ * @returns The rounded integer.
+ */
+function roundWithThreshold (value: number, threshold: number): number {
+  const integerPart: number = Math.floor(value);
+  const fraction: number = value - integerPart;
+
+  return fraction >= threshold
+    ? Math.ceil(value)
+    : integerPart;
+}
